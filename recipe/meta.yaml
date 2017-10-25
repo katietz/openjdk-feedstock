@@ -9,7 +9,7 @@
 {% set sha256_linux_64 = "6773ccc27e26efd49827ff8ecec5c69766e69a4c3326196a688e79ee08a0e729" %}
 {% set sha256_linux_32 = "f5ef41367970cd44ec9566db0b7125f7bb7659981044aa83fefd05196eb4394b" %}
 {% set sha256_win_64 = "a90c9ef5f7c3f55a4dc198f6523aaabe781ae1bea003f73f58c356d147ede6b1" %}
-{% set sha256_win_32 = "a90c9ef5f7c3f55a4dc198f6523aaabe781ae1bea003f73f58c356d147ede6b1" %}
+{% set sha256_win_32 = "467af0ef26d63d12f5321998e066e15350aef99451dbf85d850e3cbb91f7ec75" %}
 
 package:
   name: {{ name|lower }}
