@@ -6,10 +6,10 @@
 {% set intellij_build = "1024.6" %}
 {% set build_number = 0 %}
 {% set sha256_osx = "c4c7daf4d68cc4a98a7e8e028ecbb6216203c73cab4f235671b7ac6303d38017" %}
-{% set sha256_linux_64 = "7e6284739c0e5b7142bc7a9adc61ced70dc5bb26b130b582b18e809013bcb251" %}
-{% set sha256_linux_32 = "7e6284739c0e5b7142bc7a9adc61ced70dc5bb26b130b582b18e809013bcb251" %}
-{% set sha256_win_64 = "f1d9d3341ef7c8c9baff3597953e99a6a7c64f8608ee62c03fdd7574b7655c02" %}
-{% set sha256_win_32 = "f1d9d3341ef7c8c9baff3597953e99a6a7c64f8608ee62c03fdd7574b7655c02" %}
+{% set sha256_linux_64 = "6773ccc27e26efd49827ff8ecec5c69766e69a4c3326196a688e79ee08a0e729" %}
+{% set sha256_linux_32 = "f5ef41367970cd44ec9566db0b7125f7bb7659981044aa83fefd05196eb4394b" %}
+{% set sha256_win_64 = "a90c9ef5f7c3f55a4dc198f6523aaabe781ae1bea003f73f58c356d147ede6b1" %}
+{% set sha256_win_32 = "a90c9ef5f7c3f55a4dc198f6523aaabe781ae1bea003f73f58c356d147ede6b1" %}
 
 package:
   name: {{ name|lower }}
@@ -46,6 +46,8 @@ requirements:
 
 
 test:
+  requires:
+    - {{ compiler('c') }}
   files:
     - test-jni     # [not win]
     - test-jni.sh  # [not win]

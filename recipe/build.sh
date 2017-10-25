@@ -1,6 +1,8 @@
 #!/bin/bash -euo
 
-pushd Contents/Home
+if [[ $(uname) == Darwin ]]; then
+  pushd Contents/Home
+fi
 
 chmod +x bin/*
 chmod +x jre/bin/*
@@ -32,7 +34,9 @@ fi
 
 mv jre $PREFIX/
 mv lib/* $PREFIX/lib
-mv src.zip $PREFIX/jre/
+if [[ -f src.zip ]]; then
+  mv src.zip $PREFIX/jre/
+fi
 
 # ensure that JAVA_HOME is set correctly
 mkdir -p $PREFIX/etc/conda/activate.d
@@ -40,5 +44,7 @@ mkdir -p $PREFIX/etc/conda/deactivate.d
 cp $RECIPE_DIR/scripts/activate.sh $PREFIX/etc/conda/activate.d/java_home.sh
 cp $RECIPE_DIR/scripts/deactivate.sh $PREFIX/etc/conda/deactivate.d/java_home.sh
 
-popd
+if [[ $(uname) == Darwin ]]; then
+  popd
+fi
 
