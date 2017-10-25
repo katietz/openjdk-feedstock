@@ -9,17 +9,22 @@ chmod +x jre/bin/*
 mv bin/* $PREFIX/bin/
 ls -la $PREFIX/bin
 mv include/* $PREFIX/include
-if [ -e jre/lib/jspawnhelper ]; then
+if [[ -e jre/lib/jspawnhelper ]]; then
     chmod +x jre/lib/jspawnhelper
 fi
 
-if [[ `uname` == "Linux" ]]
-then
-    mv lib/amd64/jli/*.so lib
-    mv lib/amd64/*.so lib
-    rm -r lib/amd64
+if [[ $(uname -m) == x86_64 ]]; then
+  _libarch=amd64
+else
+  _libarch=i386
+fi
+
+if [[ $(uname) == Linux ]]; then
+    mv lib/${_libarch}/jli/*.so lib
+    mv lib/${_libarch}/*.so lib
+    rm -r lib/${_libarch}
     # libnio.so does not find this within jre/lib/amd64 subdirectory
-    cp jre/lib/amd64/libnet.so lib
+    cp jre/lib/${_libarch}/libnet.so lib
 
     # include dejavu fonts to allow java to work even on minimal cloud images where these fonts are missing
     # (thanks to @chapmanb)
