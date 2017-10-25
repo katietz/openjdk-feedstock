@@ -1,5 +1,7 @@
 #!/bin/bash -euo
 
+pushd Contents/Home
+
 chmod +x bin/*
 chmod +x jre/bin/*
 mv bin/* $PREFIX/bin/
@@ -37,3 +39,6 @@ mkdir -p $PREFIX/etc/conda/activate.d
 mkdir -p $PREFIX/etc/conda/deactivate.d
 cp $RECIPE_DIR/scripts/activate.sh $PREFIX/etc/conda/activate.d/java_home.sh
 cp $RECIPE_DIR/scripts/deactivate.sh $PREFIX/etc/conda/deactivate.d/java_home.sh
+
+popd
+
