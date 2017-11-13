@@ -6,9 +6,13 @@ fi
 
 chmod +x bin/*
 chmod +x jre/bin/*
+[[ -d $PREFIX/bin ]] || mkdir $PREFIX/bin
+[[ -d $PREFIX/lib ]] || mkdir $PREFIX/lib
+[[ -d $PREFIX/include ]] || mkdir $PREFIX/include
 mv bin/* $PREFIX/bin/
-ls -la $PREFIX/bin
+mv lib/* $PREFIX/lib
 mv include/* $PREFIX/include
+
 if [[ -e jre/lib/jspawnhelper ]]; then
     chmod +x jre/lib/jspawnhelper
 fi
@@ -38,7 +42,6 @@ if [[ $(uname) == Linux ]]; then
 fi
 
 mv jre $PREFIX/
-mv lib/* $PREFIX/lib
 if [[ -f src.zip ]]; then
   mv src.zip $PREFIX/jre/
 fi

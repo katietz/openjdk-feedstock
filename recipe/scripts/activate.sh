@@ -3,7 +3,7 @@ export JAVA_HOME="${CONDA_PREFIX}"
 
 export CONDA_BACKUP_JAVA_LD_LIBRARY_PATH="${JAVA_LD_LIBRARY_PATH}"
 
-if [[ $(uname) == darwin ]]; then
+if [[ $(uname) == Darwin ]]; then
   export JAVA_LD_LIBRARY_PATH="${JAVA_HOME}"/jre/lib/server
 else
   if [[ $(uname -m) == x86_64 ]]; then
