@@ -3,13 +3,13 @@
 {% set name = "openjdk" %}
 {% set version = "8.0.152" %}
 {% set ver_parts = version.split('.') %}
-{% set intellij_build = "1024.6" %}
+{% set intellij_build = "1056.8" %}
 {% set build_number = 0 %}
-{% set sha256_osx = "c4c7daf4d68cc4a98a7e8e028ecbb6216203c73cab4f235671b7ac6303d38017" %}
-{% set sha256_linux_64 = "6773ccc27e26efd49827ff8ecec5c69766e69a4c3326196a688e79ee08a0e729" %}
-{% set sha256_linux_32 = "f5ef41367970cd44ec9566db0b7125f7bb7659981044aa83fefd05196eb4394b" %}
-{% set sha256_win_64 = "a90c9ef5f7c3f55a4dc198f6523aaabe781ae1bea003f73f58c356d147ede6b1" %}
-{% set sha256_win_32 = "467af0ef26d63d12f5321998e066e15350aef99451dbf85d850e3cbb91f7ec75" %}
+{% set sha256_osx = "582be5debcef3dd27cf184b38b99824a5c1f5e29912cd796c507d1b60ce246c8" %}
+{% set sha256_linux_64 = "d1064931a2afab9331f0e7e80532510462d0776631d77211497563340b548912" %}
+{% set sha256_linux_32 = "a626560a9da8066ceeb77639d24420ae186e812720d5c747f7329bed412ea272" %}
+{% set sha256_win_64 = "2fb37da404e1e1e3bf9c5ba44c911249e366d5b5273fa2444b55991bf296e4bf" %}
+{% set sha256_win_32 = "37a83e9f10e66abbde5ef1852680b176e13560ffcd1f01587bfe1cba2086582f" %}
 
 package:
   name: {{ name|lower }}
