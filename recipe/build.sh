@@ -52,4 +52,3 @@ cp $RECIPE_DIR/scripts/deactivate.sh $PREFIX/etc/conda/deactivate.d/java_home.sh
 if [[ $(uname) == Darwin ]]; then
   popd
 fi
-

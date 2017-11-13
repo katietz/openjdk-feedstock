@@ -42,8 +42,7 @@ build:
 
 requirements:
   build:
-    - curl
-
+    - curl  # [linux]
 
 test:
   requires:
@@ -61,10 +60,12 @@ test:
 about:
   home: https://bintray.com/jetbrains/intellij-jdk
   license: GPLv2
+  license_family: GPL
   summary: The JetBrains Runtime OpenJDK build.
   description: |
     JetBrains Runtime is a runtime environment for running
     IntelliJ Platform based products on Windows, Mac OS X, and Linux
+  dev_url: https://github.com/JetBrains/jdk8u
 
 extra:
   recipe-maintainers:
