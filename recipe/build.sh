@@ -32,13 +32,10 @@ if [[ $(uname) == Linux ]]; then
 
     # include dejavu fonts to allow java to work even on minimal cloud images where these fonts are missing
     # (thanks to @chapmanb)
-    mkdir -p jre/lib/fonts
-    cd jre/lib/fonts
-    curl -L -O -C - http://sourceforge.net/projects/dejavu/files/dejavu/2.36/dejavu-fonts-ttf-2.36.tar.bz2
-    tar -xjvpf dejavu-fonts-ttf-2.36.tar.bz2
-    mv dejavu-fonts-ttf-*/ttf/* .
-    rm -rf dejavu-fonts-ttf-*
-    cd ../../../
+    pushd jre/lib/fonts
+        mv dejavu-fonts-ttf-*/ttf/* .
+        rm -rf dejavu-fonts-ttf-*
+    popd
 fi
 
 mv jre $PREFIX/
