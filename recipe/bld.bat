@@ -1,8 +1,9 @@
-move bin\* "%LIBRARY_BIN%"
-move include\* "%LIBRARY_INC%"
-move jre "%LIBRARY_PREFIX%"\jre
-move lib\* "%LIBRARY_LIB%"
-move src.zip "%LIBRARY_PREFIX%"\jre\src.zip
+Robocopy.exe /MOVE /S /E bin\ "%LIBRARY_BIN%"
+Robocopy.exe /MOVE /S /E include\ "%LIBRARY_INC%"
+Robocopy.exe /MOVE /S /E jre "%LIBRARY_PREFIX%"\jre
+Robocopy.exe /MOVE /S /E lib\ "%LIBRARY_LIB%"
+
+Robocopy.exe /MOVE /S /E jbrex\jre "%LIBRARY_PREFIX%"\jre
 
 :: ensure that JAVA_HOME is set correctly
 mkdir "%PREFIX%"\etc\conda\activate.d

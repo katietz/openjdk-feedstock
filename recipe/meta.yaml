@@ -49,12 +49,14 @@ source:
   - url: https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x64.tar.gz  # [win64]
     fn: jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x64.tar.gz                                                                      # [win64]
     sha256: {{ sha256_jbrex_win_64 }}                                                                                                                           # [win64]
+    folder: jbrex/jre                                                                                                                                            # [win64]
   - url: https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbsdk{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x86.tar.gz  # [win32]
     fn: jbsdk{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x86.tar.gz                                                                      # [win32]
     sha256: {{ sha256_win_32 }}                                                                                                                                 # [win32]
   - url: https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x86.tar.gz  # [win32]
     fn: jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x86.tar.gz                                                                      # [win32]
     sha256: {{ sha256_jbrex_win_32 }}                                                                                                                           # [win32]
+    folder: jbrex/jre                                                                                                                                           # [win32]
 
 build:
   number: {{ build_number }}
