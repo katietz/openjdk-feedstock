@@ -7,7 +7,7 @@
 {% set build_number = 1 %}
 {% set sha256_osx = "2e90d5c7bd9fdf1ee08fa22a77a4ce5013fdaa9b99f95d4260ccec62808487dd" %}
 {% set sha256_jbrex_osx = "554e0dae25fd4091fa3ac08828a52507bc12ac494a2a99842c01e12304df825f" %}
-{% set sha256_linux_64 = "50c70aa1932dc5e005432ed7507f522cd9d9f22526f0d9874c3cc81027a83175" %}
+{% set sha256_linux_64 = "2497fca945e70ed50c46a94c63332b8c4fa56e8e36b80885e48d4c779a00d4cc" %}
 {% set sha256_jbrex_linux_64 = "50c70aa1932dc5e005432ed7507f522cd9d9f22526f0d9874c3cc81027a83175" %}
 {% set sha256_linux_32 = "c2290713ac9fb4b990ebf5904d5645f570d25a6a9b58e39d774e1297f1d24f04" %}
 {% set sha256_jbrex_linux_32 = "e8ddf8a53494af22100c167ee0b3370f4d955a972a99e69494077d96f4b6813c" %}
@@ -40,7 +40,7 @@ source:
   - url: https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_linux_x86.tar.gz    # [linux32]
     fn: jbrex{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_linux_x86.tar.gz                                                                        # [linux32]
     sha256: {{ sha256_jbrex_linux_32 }}                                                                                                                         # [linux32]
-  - http://sourceforge.net/projects/dejavu/files/dejavu/2.36/dejavu-fonts-ttf-2.36.tar.bz2                                                                      # [linux]
+  - url: http://sourceforge.net/projects/dejavu/files/dejavu/2.36/dejavu-fonts-ttf-2.36.tar.bz2                                                                 # [linux]
     sha256: {{ sha256_dejagnu_fonts }}                                                                                                                          # [linux]
     folder: jre/lib/fonts                                                                                                                                       # [linux]
   - url: https://bintray.com/jetbrains/intellij-jdk/download_file?file_path=jbsdk{{ ver_parts[0] }}u{{ ver_parts[2] }}b{{ intellij_build }}_windows_x64.tar.gz  # [win64]
