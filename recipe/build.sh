@@ -1,5 +1,7 @@
 #!/bin/bash -euo
 
+find .
+
 if [[ $(uname) == Darwin ]]; then
   pushd Contents/Home
 fi
