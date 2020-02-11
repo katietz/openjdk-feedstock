@@ -4,7 +4,7 @@
 {% set version = "8.0.152" %}
 {% set ver_parts = version.split('.') %}
 {% set intellij_build = "1056.12" %}
-{% set build_number = 1 %}
+{% set build_number = 2 %}
 {% set sha256_osx = "2e90d5c7bd9fdf1ee08fa22a77a4ce5013fdaa9b99f95d4260ccec62808487dd" %}
 {% set sha256_jbrex_osx = "554e0dae25fd4091fa3ac08828a52507bc12ac494a2a99842c01e12304df825f" %}
 {% set sha256_linux_64 = "2497fca945e70ed50c46a94c63332b8c4fa56e8e36b80885e48d4c779a00d4cc" %}
@@ -65,6 +65,8 @@ build:
   rpath:
     - lib
     - jre/lib
+  missing_dso_whitelist:
+    - '*'
 
 test:
   requires:
