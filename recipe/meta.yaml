@@ -68,8 +68,9 @@ build:
     - '*'
   track_features:
     - openjdk
-  rpath:
+  rpaths:
     - lib
+    - lib/server
 
 requirements:
   build:
