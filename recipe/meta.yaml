@@ -60,7 +60,12 @@ source:
 build:
   number: {{ build_number }}
   # JDK 11 is not available for linux 32-bit, nor right now for windows 32-bit.
-  skip: True  # [linux32 or win32]
+  skip: True  # [linux32 or win32 or ppc64le]
+  binary_relocation: False
+  runpath_whitelist:
+    - $ORIGIN/../lib
+  missing_dso_whitelist:
+    - '*'
   track_features:
     - openjdk
   rpath:

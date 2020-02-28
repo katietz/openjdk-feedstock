@@ -30,10 +30,10 @@ mv jmods/* $PREFIX/jmods
 mkdir -p $PREFIX/legal
 mv legal/* $PREFIX/legal
 
-mkdir -p $PREFIX/man/man1
-mv man/man1/* $PREFIX/man/man1
-rm -rf man/man1
-mv man/* $PREFIX/man
+# mkdir -p $PREFIX/man/man1
+# mv man/man1/* $PREFIX/man/man1
+# rm -rf man/man1
+# mv man/* $PREFIX/man
 
 if [[ $(uname) == Linux ]]; then
     mv $PREFIX/lib/jli/*.so $PREFIX/lib/
@@ -44,7 +44,8 @@ fi
 for CHANGE in "activate" "deactivate"
 do
     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-    cp "${RECIPE_DIR}/scripts/${CHANGE\.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+    cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done
 if [[ $(uname) == Darwin ]]; then
   popd
 fi
